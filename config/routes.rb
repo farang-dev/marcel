@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   post '/test_openai', to: 'openai#test_openai'
   get '/test_openai', to: 'openai#test_openai'
+  get '/response_page', to: 'openai#response_page', as: :response_page
 end

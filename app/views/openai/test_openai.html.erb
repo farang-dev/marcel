@@ -1,54 +1,60 @@
-<h1>Test OpenAI</h1>
-<%= form_with(url: test_openai_path, method: :post, data: { remote: true }) do |form| %>
+<!-- app/views/openai/test_openai.html.erb -->
+<h1>🤖 Marcel</h1>
+<%= form_with(url: test_openai_path, method: :post) do |form| %>
   <!-- Add the dropdown menus and text inputs -->
   <div>
-    <%= form.label "To: " %>
+    <%= form.label :to %>
     <%= form.select :to, ['colleague', 'manager', 'friend', 'family'] %>
   </div>
   <div>
-    <%= form.label "Platform: " %>
+    <%= form.label :platform %>
     <%= form.select :platform, ['email', 'LinkedIn', 'Instagram', 'Whatsapp'] %>
   </div>
   <div>
-    <%= form.label "Tone: " %>
+    <%= form.label :tone %>
     <%= form.select :tone, ['formal', 'neutral', 'professional', 'friendly'] %>
   </div>
   <div>
-    <%= form.label "Length: " %>
+    <%= form.label :length %>
     <%= form.select :length, ['in detail(long)', 'medium', 'short', 'very short'] %>
   </div>
   <div>
-    <%= form.label "Who: " %>
+    <%= form.label :who %>
     <%= form.text_field :who, value: "Receiver's name" %>
   </div>
   <div>
-    <%= form.label "I want to say: " %>
+    <%= form.label :message %>
     <%= form.text_area :message, value: "・Write what to say" %>
   </div>
-  <%= form.submit "Ask OpenAI" %>
+  <%= csrf_meta_tags %>
+  <%= submit_tag "Ask OpenAI" %>
 <% end %>
 <!-- Display the response -->
 <% if @response.present? %>
-  <div id="openai-response">
-    <h3>Response:</h3>
-    <p class="response-message"><%= @response %></p>
-    <button onclick="copyResponseToClipboard()">Copy Response</button>
-  </div>
+  <h3>Response:</h3>
+  <p class="response-message"><%= @response %></p>
+<% else %>
+  <p>No response from OpenAI.</p>
 <% end %>
 <!-- Add the JavaScript code -->
 <script>
   function copyResponseToClipboard() {
     const responseElement = document.querySelector(".response-message");
-    const responseText = responseElement.textContent.trim();
 
-    const textArea = document.createElement("textarea");
-    textArea.value = responseText;
-    document.body.appendChild(textArea);
+    if (responseElement) {
+      const responseText = responseElement.textContent.trim();
 
-    textArea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textArea);
+      const textArea = document.createElement("textarea");
+      textArea.value = responseText;
+      document.body.appendChild(textArea);
 
-    alert("Response copied to clipboard!");
+      textArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textArea);
+
+      alert("Response copied to clipboard!");
+    } else {
+      alert("No response to copy.");
+    }
   }
 </script>

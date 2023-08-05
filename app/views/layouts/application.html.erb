@@ -3,14 +3,16 @@
   <head>
     <title>Marcel</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- app/views/layouts/application.html.erb -->
+    <%= turbo_include_tags %>
+    <%= turbo_stream_from "turbo-streams" %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
   </head>
-
   <body>
     <%= yield %>
+    <%= turbo_stream_from "turbo-streams" %>
+    <%= turbo_include_tags %>
   </body>
 </html>

@@ -1,17 +1,19 @@
 class OpenaiController < ApplicationController
   def test_openai
     if request.post?
-      if params[:prompt].present?
-        @response = OpenaiService.new(build_prompt(params)).call
+      if params[:to].present? && params[:platform].present? && params[:tone].present? && params[:length].present? && params[:who].present? && params[:message].present?
+        prompt = build_prompt(params)
+        @response = OpenaiService.new(prompt).call
+      else
+        @response = "Please fill in all the fields."
       end
 
-      respond_to do |format|
-        format.html { render partial: "openai_response" } # Check if the partial name is correct
-        format.turbo_stream { render turbo_stream: turbo_stream.replace("openai-response", partial: "openai_response") }
-      end
-    else
-      @response = nil
+      redirect_to response_page_path(response: CGI.escape(@response))
     end
+  end
+
+  def response_page
+    @response = CGI.unescape(params[:response]) if params[:response].present?
   end
 
   private
@@ -24,6 +26,10 @@ class OpenaiController < ApplicationController
     who = params[:who]
     message = params[:message]
 
-    "I am sending a message to #{to} whose name is #{who} on #{platform}. The tone of the message needs to be #{tone} and the length of the message is #{length}. In this message, I want to say #{message}."
+    prompt_text = "I am sending a message to #{to} whose name is #{who} on #{platform}. The tone of the message needs to be #{tone} and the length of the message is #{length}. In this message, I want to say #{message}. Write a message based on these information"
+
+    Rails.logger.debug("Built prompt: #{prompt_text}")
+
+    prompt_text
   end
 end
