@@ -22,4 +22,4 @@ test:
 
 production:
   <<: *default
-   adapter: null
+  adapter: null
