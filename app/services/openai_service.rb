@@ -16,7 +16,7 @@ class OpenaiService
         messages: [{ role: "user", content: @prompt }],
         temperature: 0.7,
         stream: false,
-        max_tokens: 300
+        max_tokens: 500
       }
     )
 

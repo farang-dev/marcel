@@ -1,0 +1,2 @@
+module OpenaiRepliesHelper
+end

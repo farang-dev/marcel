@@ -1,35 +1,36 @@
 <!-- app/views/openai/test_openai.html.erb -->
-<h1>🤖 Marcel</h1>
-<h3>I'm sending:</h3>
-<%= form_with(url: test_openai_path, method: :post) do |form| %>
-  <!-- Add the dropdown menus and text inputs -->
-  <div>
-    <%= form.label :to %>
-    <%= form.select :to, ['colleague', 'manager', 'friend', 'family'] %>
-  </div>
-  <div>
-    <%= form.label :platform %>
-    <%= form.select :platform, ['email', 'LinkedIn', 'Instagram', 'Whatsapp'] %>
-  </div>  
-  <div>
-    <%= form.label :tone %>
-    <%= form.select :tone, ['formal', 'neutral', 'professional', 'friendly'] %>
-  </div>
-  <div>
-    <%= form.label :length %>
-    <%= form.select :length, ['in detail(long)', 'medium', 'short', 'very short'] %>
-  </div>
-  <div>
-    <%= form.label :who %>
-    <%= form.text_field :who, value: "Receiver's name" %>
-  </div>
-  <div>
-    <%= form.label :message %>
-    <%= form.text_area :message, value: "・Write what to say" %>
-  </div>
-  <%= csrf_meta_tags %>
-  <%= submit_tag "CREATE" %>
-<% end %>
+<div class="chat-container">
+  <h3>I'm sending:</h3>
+  <%= form_with(url: test_openai_path, method: :post) do |form| %>
+    <!-- Add the dropdown menus and text inputs -->
+    <div>
+      <%= form.label :to %>
+      <%= form.select :to, ['Select','coworker', 'manager', 'friend', 'family', 'client','collaborator', 'business partner', 'recruiter', 'customer', 'professor', 'student'] %>
+    </div>
+    <div>
+      <%= form.label :platform %>
+      <%= form.select :platform, ['Select','Email', 'LinkedIn', 'Instagram', 'Whatsapp', 'Messenger'] %>
+    </div>
+    <div>
+      <%= form.label :tone %>
+      <%= form.select :tone, ['Select','formal', 'professional', 'neutral', 'friendly'] %>
+    </div>
+    <div>
+      <%= form.label :length %>
+      <%= form.select :length, ['Select','in detail(long)', 'medium', 'short', 'very short'] %>
+    </div>
+    <div>
+      <%= form.label :who %>
+      <%= form.text_field :who, placeholder: "Receiver's name" %>
+    </div>
+    <div class="d-flex flex-column">
+      <%= form.label :message %>
+      <%= form.text_area :message, placeholder: "・Write what to say", rows: 8 %>
+    </div>
+    <%= csrf_meta_tags %>
+    <%= submit_tag "CREATE", class: "text-white btn btn-primary border rounded mt-3" %>
+  <% end %>
+</div>
 <!-- Add the JavaScript code -->
 <script>
   function copyResponseToClipboard() {
