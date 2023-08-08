@@ -32,5 +32,11 @@ module Marcel
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.skip_database_initialization = ENV['SKIP_DB_INIT'].present?
+    unless config.skip_database_initialization
+      config.database_configuration = Rails.root.join('config', 'database.yml')
+      # Add other database-related configurations here if needed.
+    end
   end
 end
