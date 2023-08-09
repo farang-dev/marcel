@@ -269,6 +269,7 @@ DEPENDENCIES
   ruby-openai
   sassc
   selenium-webdriver
+  sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails
   turbo-rails
