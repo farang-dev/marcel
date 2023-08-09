@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: {
     application: "./app/javascript/application.js"
   },
