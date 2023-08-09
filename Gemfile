@@ -30,6 +30,8 @@ gem "importmap-rails"
 gem 'bootstrap'
 gem 'font-awesome-sass'
 
+gem 'webpacker'
+
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
