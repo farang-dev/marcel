@@ -19,6 +19,8 @@ gem "ruby-openai"
 
 gem 'sassc'
 
+gem 'webpacker'
+
 gem "dotenv-rails"
 
 # Use the Puma web server [https://github.com/puma/puma]
@@ -29,8 +31,6 @@ gem "importmap-rails"
 
 gem 'bootstrap'
 gem 'font-awesome-sass'
-
-gem 'webpacker'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
