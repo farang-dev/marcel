@@ -268,7 +268,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   puma (~> 5.0)
-  rails (~> 7.0.5)
+  rails
   redis (~> 4.0)
   ruby-openai
   sassc
