@@ -31,6 +31,10 @@ Rails.application.configure do
   config.assets.compile = false
   config.assets.initialize_on_precompile = false
 
+  # Skip frameworks you're not going to use. To use Rails without a database,
+  # you must remove the Active Record framework.
+  config.frameworks -= [ :active_record, :active_resource, :action_mailer ]
+
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"
 
