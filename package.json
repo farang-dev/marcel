@@ -8,6 +8,7 @@
     "test": "test"
   },
   "dependencies": {
+    "@hotwired/turbo-rails": "^7.3.0",
     "@rails/webpacker": "5.4.4",
     "acorn": "^8.10.0",
     "acorn-import-assertions": "^1.9.0",
@@ -590,13 +591,14 @@
     "sass": "^1.64.2",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
-    "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "webpack --config webpack.config.js"
   },
   "keywords": [],
   "author": "",
