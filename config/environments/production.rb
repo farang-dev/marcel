@@ -90,5 +90,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
     # Disable Active Record entirely (optional, if you don't use it)
-    config.active_record.enabled = false
+    # config.active_record.enabled = false
 end

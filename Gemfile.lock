@@ -249,7 +249,6 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  activerecord (= 7.0.5.1)
   bootsnap
   bootstrap
   capybara
@@ -257,7 +256,7 @@ DEPENDENCIES
   dotenv-rails
   font-awesome-sass
   importmap-rails
-  pg (~> 1.1)
+  pg
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)
   redis (~> 4.0)
