@@ -14,6 +14,8 @@ group :development, :test do
   gem "sqlite3", "~> 1.4"
 end
 
+gem "pg", "~> 1.1"
+
 # Install OpenAI
 gem "ruby-openai"
 
