@@ -1,4 +1,3 @@
-# config/database.yml
 default: &default
   adapter: sqlite3
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -9,7 +8,7 @@ development:
   database: db/development.sqlite3
 
 test:
-  adapter: null
+  <<: *default
 
 production:
-  adapter: null
+  <<: *default
