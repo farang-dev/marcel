@@ -258,7 +258,7 @@ DEPENDENCIES
   importmap-rails
   pg (~> 1.1)
   puma (~> 5.0)
-  rails
+  rails (~> 7.0.4, >= 7.0.4.3)
   redis (~> 4.0)
   ruby-openai
   sassc
