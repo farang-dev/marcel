@@ -21,8 +21,6 @@ gem "ruby-openai"
 
 gem 'sassc'
 
-gem 'webpacker'
-
 gem "dotenv-rails"
 
 # Use the Puma web server [https://github.com/puma/puma]
