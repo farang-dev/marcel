@@ -15,6 +15,7 @@ group :development, :test do
 end
 
 gem "pg", "~> 1.1"
+gem 'activerecord', '7.0.5.1'
 
 # Install OpenAI
 gem "ruby-openai"
