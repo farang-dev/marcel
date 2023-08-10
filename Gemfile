@@ -10,11 +10,7 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.3"
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
-group :development, :test do
-  gem "sqlite3", "~> 1.4"
-end
-
-gem "pg"
+  gem "sqlite3"
 
 # Install OpenAI
 gem "ruby-openai"
