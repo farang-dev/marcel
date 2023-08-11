@@ -18,7 +18,6 @@ class OpenaiRepliesController < ApplicationController
     private
 
     def build_prompt(params)
-      to = params[:to]
       platform = params[:platform]
       tone = params[:tone]
       length = params[:length]
