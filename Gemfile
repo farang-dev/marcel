@@ -15,8 +15,6 @@ gem "sprockets-rails"
 # Install OpenAI
 gem "ruby-openai"
 
-gem 'sassc'
-
 gem "dotenv-rails"
 
 # Use the Puma web server [https://github.com/puma/puma]

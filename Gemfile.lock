@@ -257,7 +257,6 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)
   ruby-openai
-  sassc
   sassc-rails
   selenium-webdriver
   sprockets-rails

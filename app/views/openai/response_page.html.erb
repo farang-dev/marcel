@@ -1,12 +1,14 @@
 <div class="chat-container">
   <% if @response.present? %>
     <h3>Here is an idea💡:</h3>
-    <% paragraphs = @response.split("\n\n") %>
-    <% paragraphs.each do |paragraph| %>
-      <div class="chat-bubble">
-        <p class="chat-text"><%= paragraph %></p>
-      </div>
-    <% end %>
+    <div class="text-box">
+      <% paragraphs = @response.split("\n\n") %>
+      <% paragraphs.each do |paragraph| %>
+        <div class="chat-bubble">
+          <p class="chat-text"><%= paragraph %></p>
+        </div>
+      <% end %>
+    </div>
     <a href="/" class="text-white btn btn-primary border rounded mt-1">BACK TOP</a>
   <% else %>
     <p class="chat-text">No response from OpenAI.</p>
