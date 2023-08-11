@@ -1,7 +1,7 @@
 <div class="chat-container">
   <% if @response.present? %>
     <h3>Here is an idea💡:</h3>
-    <div class="text-box mt-2">
+    <div class="text-box mt-3">
       <% paragraphs = @response.split("\n\n") %>
       <% paragraphs.each do |paragraph| %>
         <div class="chat-bubble">
