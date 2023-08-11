@@ -3,32 +3,32 @@
   <h3>I'm sending:</h3>
   <%= form_with(url: test_openai_path, method: :post) do |form| %>
     <!-- Add the dropdown menus and text inputs -->
-    <div>
+    <div class="mt-1">
       <%= form.label :to %>
       <%= form.select :to, ['Select','coworker', 'manager', 'friend', 'family', 'client','collaborator', 'business partner', 'recruiter', 'customer', 'professor', 'student'] %>
     </div>
-    <div>
+    <div class="mt-1">
       <%= form.label :platform %>
       <%= form.select :platform, ['Select','Email', 'LinkedIn', 'Instagram', 'Whatsapp', 'Messenger'] %>
     </div>
-    <div>
+    <div class="mt-1">
       <%= form.label :tone %>
       <%= form.select :tone, ['Select','formal', 'professional', 'neutral', 'friendly'] %>
     </div>
-    <div>
+    <div class="mt-1">
       <%= form.label :length %>
       <%= form.select :length, ['Select','in detail(long)', 'medium', 'short', 'very short'] %>
     </div>
-    <div>
+    <div class="mt-1">
       <%= form.label :who %>
       <%= form.text_field :who, placeholder: "Receiver's name" %>
     </div>
-    <div class="d-flex flex-column">
+    <div class="d-flex flex-column mt-1">
       <%= form.label :message %>
       <%= form.text_area :message, placeholder: "・Write what to say", rows: 8 %>
     </div>
     <%= csrf_meta_tags %>
-    <%= submit_tag "CREATE", class: "text-white btn btn-primary border rounded mt-3" %>
+    <%= submit_tag "CREATE", class: "text-white btn btn-primary border rounded mt-2" %>
   <% end %>
 </div>
 <!-- Add the JavaScript code -->
