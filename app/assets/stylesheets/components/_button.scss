@@ -1,17 +1,17 @@
 .button {
-  width: 170px;
-  padding-top: 30px;
-  padding-bottom: 30px;
   text-align: center;
   color: #000;
-  background-color: #ffffff;
-  border: #000;
-  font-weight: 600;
-  margin-left: 30px;
-  margin-bottom: 30px;
   cursor: pointer;
   display: inline-block;
   transition: .3s;
+  width: 150px;
+  height: 56px;
+  /* flex-shrink: 0; */
+  border-radius: 25px;
+  border: 0.5px solid #A0A0A0;
+  background: #FFF;
+  padding-top: 15px;
+  font-weight: 600;
 }
 
 .button:hover {
