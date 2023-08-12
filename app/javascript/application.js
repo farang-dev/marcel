@@ -2,3 +2,6 @@
 //= require rails-ujs
 import "@hotwired/turbo-rails"
 import "./controllers"
+
+
+console.log('Webpack is working!');
