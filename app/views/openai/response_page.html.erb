@@ -8,9 +8,39 @@
           <p class="chat-text"><%= paragraph %></p>
         </div>
       <% end %>
+      <button onclick="copyText(this)" class="text-white btn btn-primary border rounded">COPY TEXT</button>
     </div>
     <a href="/" class="text-white btn btn-primary border rounded mt-3">BACK TOP</a>
   <% else %>
     <p class="chat-text">No response from OpenAI.</p>
   <% end %>
 </div>
+<script>
+  function copyText(button) {
+    var chatTextElements = document.querySelectorAll(".chat-text");
+    var copiedText = '';
+
+    chatTextElements.forEach(function(element) {
+      copiedText += element.textContent + "\n\n"; // Add newline characters
+    });
+
+    // Create a temporary textarea element to copy the text to the clipboard
+    var tempTextArea = document.createElement("textarea");
+    tempTextArea.value = copiedText;
+    document.body.appendChild(tempTextArea);
+
+    // Select and copy the text
+    tempTextArea.select();
+    document.execCommand("copy");
+
+    // Clean up and remove the temporary textarea
+    document.body.removeChild(tempTextArea);
+
+    // Toggle button text between "Copy text" and "Copied!"
+    if (button.textContent === "COPY TEXT") {
+      button.textContent = "COPIED!";
+    } else {
+      button.textContent = "COPY TEXT";
+    }
+  }
+</script>

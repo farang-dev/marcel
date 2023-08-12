@@ -10,6 +10,7 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^7.3.0",
+    "@rails/webpacker": "5.4.4",
     "acorn": "^8.10.0",
     "acorn-import-assertions": "^1.9.0",
     "aggregate-error": "^3.1.0",
@@ -366,7 +367,7 @@
     "pkg-dir": "^4.2.0",
     "pnp-webpack-plugin": "^1.7.0",
     "posix-character-classes": "^0.1.1",
-    "postcss": "^7.0.39",
+    "postcss": "^8.2.15",
     "postcss-attribute-case-insensitive": "^4.0.2",
     "postcss-calc": "^7.0.5",
     "postcss-color-functional-notation": "^2.0.1",
@@ -512,11 +513,11 @@
     "stream-http": "^2.8.3",
     "stream-shift": "^1.0.1",
     "strict-uri-encode": "^1.1.0",
-    "string_decoder": "^1.3.0",
     "string-width": "^3.1.0",
     "string.prototype.trim": "^1.2.7",
     "string.prototype.trimend": "^1.0.6",
     "string.prototype.trimstart": "^1.0.6",
+    "string_decoder": "^1.3.0",
     "strip-ansi": "^5.2.0",
     "stylehacks": "^4.0.3",
     "supports-color": "^5.5.0",
@@ -583,6 +584,9 @@
     "yargs-parser": "^13.1.2",
     "yocto-queue": "^0.1.0"
   },
+  "engines": {
+    "node": ">=14"
+  },
   "devDependencies": {
     "@babel/core": "^7.22.10",
     "@babel/preset-env": "^7.22.10",
@@ -597,7 +601,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
+    "start": "webpack-dev-server --mode development --open",
     "build": "webpack --config webpack.config.js"
   },
   "keywords": [],
