@@ -5,10 +5,9 @@
       <% paragraphs = @response.split("\n\n") %>
       <% paragraphs.each do |paragraph| %>
         <div class="chat-bubble">
-          <p class="chat-text" id="myInput"><%= paragraph %></p>
+          <p class="chat-text"><%= paragraph %></p>
         </div>
       <% end %>
-      <button onclick="myFunction()">Copy text</button>
     </div>
     <a href="/" class="text-white btn btn-primary border rounded mt-3">BACK TOP</a>
   <% else %>
