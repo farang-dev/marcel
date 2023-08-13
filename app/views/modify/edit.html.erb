@@ -1,0 +1,25 @@
+<div class="chat-container">
+  <h3>Make it better 🌱</h3>
+  <div class="modification-form mt-3">
+    <%= form_with(url: update_modify_path, method: :post) do |form| %>
+      <div class="form-group">
+        <%= form.text_area :modification_request, class: 'form-control', placeholder: "Please write your request here. e.g. Make it sound more friendly.", rows: 8 %>
+      </div>
+      <%= form.hidden_field :response, value: @response %>
+      <%= form.submit 'CREATE', class: 'text-white btn btn-primary border rounded mt-2' %>
+    <% end %>
+    <% if @response.present? %>
+      <div class="previous-response mt-3">
+        <h5>Previous message:</h5>
+        <div class="text-box text-secondary mt-3">
+          <% paragraphs = @response.split("\n\n") %>
+          <% paragraphs.each do |paragraph| %>
+            <div class="chat-bubble">
+              <p class="chat-text"><%= paragraph %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

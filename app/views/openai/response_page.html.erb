@@ -10,7 +10,12 @@
       <% end %>
       <button onclick="copyText(this)" class="text-white btn btn-primary border rounded">COPY TEXT</button>
     </div>
-    <a href="/" class="text-white btn btn-primary border rounded mt-3">BACK TOP</a>
+    <div class="button-container">
+      <p class="mb-2 h5">Make it better?</p>
+      <a href="<%= edit_modify_path(response: @response) %>" class="text-white btn btn-primary border rounded mb-2">MODIFY TEXT</a>
+      <p class="mb-1 h5">I'm happy with it</p>
+      <a href="/" class="text-white btn btn-primary border rounded mt-1">BACK TOP</a>
+    </div>
   <% else %>
     <p class="chat-text">No response from OpenAI.</p>
   <% end %>

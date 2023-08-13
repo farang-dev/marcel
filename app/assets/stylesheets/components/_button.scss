@@ -20,3 +20,16 @@
   background-color: #79D760;
   color:white;
 }
+
+/* Add this CSS to your stylesheet */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start; /* Center horizontally */
+  margin-top: 15px; /* Add margin for spacing */
+}
+
+/* Optional: Add margin to the "BACK TOP" button */
+.button-container .btn:last-child {
+  margin-top: 10px; /* Adjust as needed */
+}
